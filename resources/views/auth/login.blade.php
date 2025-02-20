@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
     <title>Document</title>
 </head>
@@ -58,12 +59,12 @@
                     <small class="text-red-500 text-xs">{{ $message }}</small>
                 @enderror
             </div>
-            
+
             <script>
                 function togglePassword() {
                     var passwordField = document.getElementById("password");
                     var eyeIcon = document.getElementById("eyeIcon");
-                    
+
                     if (passwordField.type === "password") {
                         passwordField.type = "text";
                         eyeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7 1.274-4.057 5.065-7 9.542-7 1.89 0 3.682.533 5.205 1.458M21 21l-5.197-5.197M15 12a3 3 0 00-6 0 3 3 0 006 0z" />';
@@ -73,7 +74,7 @@
                     }
                 }
             </script>
-            
+
 
             <!-- Remember Me Checkbox -->
             <div class="flex items-center justify-between">
@@ -113,7 +114,7 @@
                         </svg>
                         Sign in with Facebook
                       </button>
-                    
+
             </div>
 
             <!-- Submit Button -->

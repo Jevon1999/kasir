@@ -14,10 +14,11 @@ class AuthController extends Controller
             'password' => 'required|max:50',
         ]);
         if(Auth::attempt($request->only('email','password'),$request-> remember)){
+            if(Auth::user()->status == 'verify') return redirect('/verify');
             if(Auth::user()->role == 'customer') return redirect('/customer');
             return redirect('dashboard');
         }
-        return back()->with('failed','Email atau password salah');  
+        return back()->with('failed','Email atau password salah');
     }
 
     public function register(Request $request){
@@ -32,7 +33,7 @@ class AuthController extends Controller
         $user = User::create($request->all());
         Auth::login($user);
         return redirect('/customer');
-        
+
 
     }
 
@@ -40,6 +41,6 @@ class AuthController extends Controller
         Auth::logout(Auth::user());
         return redirect('login');
     }
-    
+
 
 }

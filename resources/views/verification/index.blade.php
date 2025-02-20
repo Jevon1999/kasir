@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Document</title>
 </head>
 <body>
-    <div class="max-w-sm mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+    <div class="flex items-center justify-center h-screen">
+    <div class="max-w-sm mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 ">
         <div class="text-center">
           <img class="h-8 w-auto mx-auto" src="https://www.svgrepo.com/show/353414/apple.svg" alt="Apple">
-          <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign in to your account</h2>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Don't have an account?
-            <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-300">Sign Up →</a>
-          </p>
+          <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Please verify your account</h2>
+           <form action="/verify" method="post">
+           @csrf
+           <input type="hidden" value="register" name="type">
+           <button type="submit" class="inline-flex items-center border font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 px-4 py-2 text-base bg-black font-medium text-white hover:bg-gray-800 border border-black focus:ring-black w-full justify-center">
+            Send OTP to your email</button>
+        </form>
         </div>
 
         <!-- Handle session or validation errors -->
@@ -29,12 +32,10 @@
 
 
 
-            <!-- Submit Button -->
-            <div>
-                <button type="submit" class="inline-flex items-center border font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 px-4 py-2 text-base bg-black font-medium text-white hover:bg-gray-800 border border-black focus:ring-black w-full justify-center">
-                    Sign in
-                </button>
-            </div>
+
+
+
     </div>
+</div>
 </body>
 </html>

@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 
 class Verification extends Model
 {
-    use HashFactory;
-    protected $guarded = [];
+    use HasFactory; // Perbaikan dari HashFactory
+
+    protected $guarded = []; // Memungkinkan mass assignment
 }
